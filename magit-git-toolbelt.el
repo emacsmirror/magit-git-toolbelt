@@ -4,7 +4,7 @@
 
 ;; Author: Jonathan Chu <me@jonathanchu.is>
 ;; URL: https://github.com/jonathanchu/magit-git-toolbelt
-;; Version: 0.1.0
+;; Version: 0.2.0
 ;; Package-Requires: ((emacs "26.1") (magit "3.0.0") (transient "0.3.0"))
 ;; Keywords: git tools vc
 
@@ -49,6 +49,15 @@
 (defcustom magit-git-toolbelt-recent-branches-since "1.week.ago"
   "Default time range for recent-branches command."
   :type 'string
+  :group 'magit-git-toolbelt)
+
+(defcustom magit-git-toolbelt-key "\\"
+  "Key to invoke magit-git-toolbelt in Magit buffers.
+  Set to nil to disable automatic keybinding.
+  If you change this after loading, call `magit-git-toolbelt-setup-key'
+  to apply the new binding."
+  :type '(choice (string :tag "Key")
+                 (const :tag "Disable" nil))
   :group 'magit-git-toolbelt)
 
 ;;; Transient Menu
@@ -254,9 +263,16 @@
 
 ;;; Integration with Magit
 
-(transient-append-suffix 'magit-dispatch "!"
-  '("@" "Git Toolbelt" magit-git-toolbelt))
-(define-key magit-mode-map "@" #'magit-git-toolbelt)
+(defun magit-git-toolbelt-setup-key ()
+  "Set up the keybinding for magit-git-toolbelt.
+  Uses the key defined in `magit-git-toolbelt-key'."
+  (when magit-git-toolbelt-key
+    (transient-append-suffix 'magit-dispatch "/"
+      `(,magit-git-toolbelt-key "Git Toolbelt" magit-git-toolbelt))
+    (define-key magit-mode-map (kbd magit-git-toolbelt-key) #'magit-git-toolbelt)))
+
+(with-eval-after-load 'magit
+  (magit-git-toolbelt-setup-key))
 
 (provide 'magit-git-toolbelt)
 
