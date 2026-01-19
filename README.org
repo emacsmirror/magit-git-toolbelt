@@ -19,12 +19,22 @@ Requirements:
 * Installation
 
 #+begin_src emacs-lisp
-  (use-package magit-git-toolbelt
-    :ensure t
-    :after magit)
+(use-package magit-git-toolbelt
+  :ensure t
+  :after magit)
 #+end_src
 
-Then you can access ~magit-git-toolbelt~ from the Magit status menu by typing ~@~ or ~m-x magit-git-toolbelt~.
+Then you can access ~magit-git-toolbelt~ from the Magit status menu by typing ~\~ or ~m-x magit-git-toolbelt~.
+
+If you don't like the ~\~ key binding to invoke ~magit-git-toolbelt~, you can set any custom value you want like so:
+
+#+begin_src emacs-lisp
+(use-package magit-git-toolbelt
+  :ensure t
+  :after magit
+  :custom
+  (magit-git-toolbelt-key "."))
+#+end_src
 
 #+CAPTION: magit-git-toolbelt, git-toolbelt, magit
 #+NAME: Magit Git Toolbelt Screenshot
