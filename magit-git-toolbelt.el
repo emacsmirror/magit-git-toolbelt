@@ -36,8 +36,13 @@
 
 ;;; Code:
 
-(require 'magit)
 (require 'transient)
+
+(declare-function magit-git-string "magit-git")
+(declare-function magit-git-command "magit-git")
+(declare-function magit-show-commit "magit-diff")
+(declare-function magit-refresh "magit-mode")
+(defvar magit-mode-map)
 
 ;;; Custom Variables
 
