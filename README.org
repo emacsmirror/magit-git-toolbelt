@@ -2,6 +2,8 @@
 #+author: Jonathan Chu
 #+email: me@jonathanchu.is
 
+[[https://melpa.org/#/magit-git-toolbelt][https://melpa.org/packages/magit-git-toolbelt-badge.svg]]
+
 ~magit-git-toolbelt~ is an Emacs package that integrates [[https://github.com/nvie][@nvie's]] [[https://github.com/nvie/git-toolbelt][git-toolbelt]] CLI utility into [[https://magit.vc/][Magit]]. It provides a Transient menu interface to access ~git-toolbelt~ commands directly from Emacs without leaving your workflow.
 
 Features include:
