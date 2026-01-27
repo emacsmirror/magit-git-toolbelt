@@ -47,6 +47,36 @@ If you don't like the ~\~ key binding to invoke ~magit-git-toolbelt~, you can se
   (setq magit-git-toolbelt-key ".")) ; Example setting key to "." instead of the default "\"
 #+end_src
 
+The transient menu is organized into quick commands, submenus, and actions:
+
+#+begin_example
+magit-git-toolbelt
+├── Quick Commands
+│   ├── c  Cleanup merged branches
+│   ├── r  Recent branches
+│   └── a  Active branches
+├── Submenus
+│   ├── C  Commit Info...
+│   │   ├── i  Initial commit
+│   │   ├── s  Current SHA
+│   │   └── l  Local commits
+│   ├── B  Branches...
+│   │   ├── l  Local branches
+│   │   ├── b  Current branch
+│   │   ├── m  Main branch
+│   │   ├── r  Remote branches
+│   │   └── t  Remote tracking branch
+│   ├── M  Merge Status...
+│   │   ├── m  Merged
+│   │   ├── u  Unmerged
+│   │   └── s  Merge status
+│   └── D  Diff & Inspection...
+│       ├── m  Modified files
+│       └── u  Untracked files
+└── Actions
+    └── z  Undo last commit
+#+end_example
+
 * Screenshot
 
 #+CAPTION: magit-git-toolbelt, git-toolbelt, magit
