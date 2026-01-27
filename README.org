@@ -47,7 +47,7 @@ If you don't like the ~\~ key binding to invoke ~magit-git-toolbelt~, you can se
   (setq magit-git-toolbelt-key ".")) ; Example setting key to "." instead of the default "\"
 #+end_src
 
-The transient menu is organized into quick commands, submenus, and actions:
+The Transient menu is organized into Quick Commands, Submenus, and Actions:
 
 #+begin_example
 magit-git-toolbelt
