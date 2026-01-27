@@ -13,7 +13,7 @@ Features include:
   - Merge status (merged, unmerged)
   - Actions (undo last commit)
 
-* Requirements
+** Requirements
 
   - Emacs 26.1+
   - Magit 3.0.0+
