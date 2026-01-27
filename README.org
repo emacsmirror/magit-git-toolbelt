@@ -13,12 +13,19 @@ Features include:
   - Merge status (merged, unmerged)
   - Actions (undo last commit)
 
-Requirements:
+* Requirements
+
   - Emacs 26.1+
   - Magit 3.0.0+
   - git-toolbelt ([[https://github.com/nvie/git-toolbelt?tab=readme-ov-file#installation-instructions][installed separately]])
 
 * Installation
+
+Install from MELPA:
+
+=M-x package-install RET magit-git-toolbelt RET=
+
+Or with ~use-package~:
 
 #+begin_src emacs-lisp
 (use-package magit-git-toolbelt
@@ -26,7 +33,9 @@ Requirements:
   :after magit)
 #+end_src
 
-Then you can access ~magit-git-toolbelt~ from the Magit status menu by typing ~\~ or ~m-x magit-git-toolbelt~.
+* Usage
+
+You can access ~magit-git-toolbelt~ from the *Magit status menu* by typing ~\~ or ~m-x magit-git-toolbelt~.
 
 If you don't like the ~\~ key binding to invoke ~magit-git-toolbelt~, you can set any custom value you want. Note that the variable must be set *before* the package loads:
 
@@ -38,6 +47,8 @@ If you don't like the ~\~ key binding to invoke ~magit-git-toolbelt~, you can se
   (setq magit-git-toolbelt-key ".")) ; Example setting key to "." instead of the default "\"
 #+end_src
 
+* Screenshot
+
 #+CAPTION: magit-git-toolbelt, git-toolbelt, magit
 #+NAME: Magit Git Toolbelt Screenshot
 [[https://raw.githubusercontent.com/jonathanchu/magit-git-toolbelt/refs/heads/main/screenshots/20260101_magit_git_toolbelt_screenshot.png]]
@@ -45,7 +56,7 @@ If you don't like the ~\~ key binding to invoke ~magit-git-toolbelt~, you can se
 
 * Feature Status
 
-There are still a lot of commands left to integrate into this interface as this first pass initially aims to integrate the commands that simply return information. Some of these commands are covered natively in Magit, so there is not a big need to create the interface to it here unless it offers novel functionality.
+There are still a lot of commands left to integrate into this interface as this first pass initially aims to integrate the commands that simply return information. Some of these commands are covered natively in Magit, so there is not a big need to create the interface to it here unless it offers novel functionality. The goal of ~magit-git-toolbelt~ is to extend and enhance the Magit experience, not to replicate or reinvent functionality that Magit already handles well.
 
 ** Everyday helpful commands:
   - [X] git-cleanup
@@ -94,3 +105,11 @@ There are still a lot of commands left to integrate into this interface as this 
   - [ ] git-delouse
   - [ ] git-shatter-by-file
   - [ ] git-cleave
+
+* Contributing
+
+Contributions are welcome! If you'd like to help integrate additional ~git-toolbelt~ commands or improve existing functionality, please open a pull request.
+
+Before submitting a PR, please keep in mind that this package is intended to extend Magit with useful ~git-toolbelt~ functionality -- not to duplicate what Magit already provides. If you're unsure whether a command is a good fit, feel free to open an issue to discuss it first.
+
+To report bugs or request features, please use the [[https://github.com/jonathanchu/magit-git-toolbelt/issues][GitHub issue tracker]].
