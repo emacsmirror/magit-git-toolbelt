@@ -35,7 +35,7 @@ If you don't like the ~\~ key binding to invoke ~magit-git-toolbelt~, you can se
   :ensure t
   :after magit
   :init
-  (setq magit-git-toolbelt-key "."))
+  (setq magit-git-toolbelt-key ".")) ; Example setting key to "." instead of the default "\"
 #+end_src
 
 #+CAPTION: magit-git-toolbelt, git-toolbelt, magit
