@@ -79,15 +79,13 @@ magit-git-toolbelt
 
 * Screenshots
 
-#+CAPTION: magit-git-toolbelt, git-toolbelt, magit
-#+NAME: Magit Git Toolbelt Screenshot
+#+CAPTION: Screenshot of magit-git-toolbelt from the Magit status menu
+#+NAME: magit-git-toolbelt Magit status screenshot
 [[https://raw.githubusercontent.com/jonathanchu/magit-git-toolbelt/refs/heads/main/screenshots/20260131_magit_git_toolbelt_screenshot.png]]
-/Screenshot of magit-git-toolbelt from the Magit status menu/
 
-#+CAPTION: magit-git-toolbelt, git-toolbelt, magit
-#+NAME: Magit Git Toolbelt Cleanup Screenshot
+#+CAPTION: Screenshot of magit-git-toolbelt cleanup submenu
+#+NAME: magit-git-toolbelt cleanup screenshot
 [[https://raw.githubusercontent.com/jonathanchu/magit-git-toolbelt/refs/heads/main/screenshots/20260131_magit_git_toolbelt_cleanup_screenshot.png]]
-/Screenshot of magit-git-toolbelt cleanup submenu/
 
 * Feature Status
 
