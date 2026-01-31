@@ -81,11 +81,11 @@ magit-git-toolbelt
 
 [[https://raw.githubusercontent.com/jonathanchu/magit-git-toolbelt/refs/heads/main/screenshots/20260131_magit_git_toolbelt_screenshot.png]]
 
-<small><em>Screenshot of magit-git-toolbelt from the Magit status menu</em></small>
+/Screenshot of magit-git-toolbelt from the Magit status menu/
 
 [[https://raw.githubusercontent.com/jonathanchu/magit-git-toolbelt/refs/heads/main/screenshots/20260131_magit_git_toolbelt_cleanup_screenshot.png]]
 
-<small><em>Screenshot of magit-git-toolbelt cleanup submenu</em></small>
+/Screenshot of magit-git-toolbelt cleanup submenu/
 
 * Feature Status
 
