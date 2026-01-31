@@ -113,7 +113,7 @@ Set this variable before loading the package to use a custom key."
 (transient-define-prefix magit-git-toolbelt ()
   "Git toolbelt commands."
   ["Quick Commands"
-   ("c" "Cleanup merged branches" magit-git-toolbelt-cleanup)
+   ("c" "Cleanup merged branches..." magit-git-toolbelt-cleanup)
    ("r" "Recent branches" magit-git-toolbelt-recent-branches)
    ("a" "Active branches" magit-git-toolbelt-active-branches)
    ]
@@ -129,11 +129,28 @@ Set this variable before loading the package to use a custom key."
 
 ;;; Branch Commands
 
-(defun magit-git-toolbelt-cleanup ()
-  "Delete branches already merged into master or develop."
-  (interactive)
-  (when (yes-or-no-p "Delete all branches merged into master/develop? ")
-    (magit-git-command "cleanup" default-directory)))
+(transient-define-prefix magit-git-toolbelt-cleanup ()
+  "Cleanup branches already merged into main branch."
+  ["Scope"
+   ("-l" "Remove local branches" "-l")
+   ("-r" "Remove remote branches" "-r")]
+  ["Options"
+   ("-n" "Dry run" "-n")
+   ("-s" "Include squash merges (implies -l)" "-s")
+   ("-v" "Verbose" "-v")]
+  ["Actions"
+   ("c" "Run cleanup" magit-git-toolbelt-cleanup-run)])
+
+(defun magit-git-toolbelt-cleanup-run (&optional args)
+  "Run git cleanup with ARGS from transient."
+  (interactive (list (transient-args 'magit-git-toolbelt-cleanup)))
+  (let* ((flags (string-join args " "))
+         (cmd (format "git cleanup %s" flags))
+         (output (shell-command-to-string cmd)))
+    (if (string-empty-p (string-trim output))
+        (message "No branches to clean up.")
+      (magit-git-toolbelt--display-output "Cleanup" output))
+    (magit-refresh)))
 
 (defun magit-git-toolbelt-recent-branches ()
   "Show branches modified recently."
